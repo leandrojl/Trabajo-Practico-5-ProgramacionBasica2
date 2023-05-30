@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import ar.edu.unlam.polimorfismo.CarroDeCompras;
+import ar.edu.unlam.polimorfismo.Producto;
 
 public class TestPolimorfismo {
 	
@@ -23,6 +24,13 @@ public class TestPolimorfismo {
 		
 		
 		Assert.assertNotNull(carrito);
+	}
+	
+	@Test
+	public void queSePuedaCrearUnProducto() {
+		Producto producto = new Producto();
+		
+		Assert.assertNotNull(producto);
 	}
 
 }
