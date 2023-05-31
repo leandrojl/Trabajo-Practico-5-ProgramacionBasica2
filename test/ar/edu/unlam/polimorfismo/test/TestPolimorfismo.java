@@ -32,5 +32,15 @@ public class TestPolimorfismo {
 		
 		Assert.assertNotNull(producto);
 	}
+	
+	@Test
+	public void queSePuedaGuardarUnProductoEnElCarrito() {
+		CarroDeCompras carrito = new CarroDeCompras();
+		Producto producto = new Producto();
+		
+		carrito.agregarProducto(producto);
+		
+		Assert.assertTrue(carrito.getProductos().contains(producto));
+	}
 
 }
