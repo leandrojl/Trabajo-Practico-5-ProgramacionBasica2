@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import ar.edu.unlam.polimorfismo.CarroDeCompras;
+import ar.edu.unlam.polimorfismo.Lacteo;
 import ar.edu.unlam.polimorfismo.Producto;
 
 public class TestPolimorfismo {
@@ -37,6 +38,16 @@ public class TestPolimorfismo {
 	public void queSePuedaGuardarUnProductoEnElCarrito() {
 		CarroDeCompras carrito = new CarroDeCompras();
 		Producto producto = new Producto();
+		
+		carrito.agregarProducto(producto);
+		
+		Assert.assertTrue(carrito.getProductos().contains(producto));
+	}
+	
+	@Test
+	public void queSePuedaGuardarUnProductoLacteoEnElCarrito() {
+		CarroDeCompras carrito = new CarroDeCompras();
+		Lacteo producto = new Lacteo();
 		
 		carrito.agregarProducto(producto);
 		
