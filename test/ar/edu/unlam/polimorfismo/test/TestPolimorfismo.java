@@ -4,7 +4,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import ar.edu.unlam.polimorfismo.CarroDeCompras;
+import ar.edu.unlam.polimorfismo.Electrodomestico;
 import ar.edu.unlam.polimorfismo.Lacteo;
+import ar.edu.unlam.polimorfismo.Limpieza;
 import ar.edu.unlam.polimorfismo.Producto;
 
 public class TestPolimorfismo {
@@ -29,15 +31,15 @@ public class TestPolimorfismo {
 	
 	@Test
 	public void queSePuedaCrearUnProducto() {
-		Producto producto = new Producto();
+		Producto producto = null;
 		
-		Assert.assertNotNull(producto);
+		Assert.assertNull(producto);
 	}
 	
 	@Test
 	public void queSePuedaGuardarUnProductoEnElCarrito() {
 		CarroDeCompras carrito = new CarroDeCompras();
-		Producto producto = new Producto();
+		Producto producto = new Limpieza();
 		
 		carrito.agregarProducto(producto);
 		
@@ -52,6 +54,19 @@ public class TestPolimorfismo {
 		carrito.agregarProducto(producto);
 		
 		Assert.assertTrue(carrito.getProductos().contains(producto));
+	}
+	@Test
+	public void queSePuedanCrearYGuardarDistintosProductosEnElCarrito() {
+		CarroDeCompras carrito = new CarroDeCompras();
+		Producto producto = new Lacteo();
+		Producto producto1 = new Limpieza();
+		Producto producto2 = new Electrodomestico();
+		
+		carrito.agregarProducto(producto);
+		carrito.agregarProducto(producto1);
+		carrito.agregarProducto(producto2);
+		
+		Assert.assertTrue(carrito.getProductos().size() == 3);
 	}
 
 }

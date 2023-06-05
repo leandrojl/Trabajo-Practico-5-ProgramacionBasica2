@@ -1,6 +1,6 @@
 package ar.edu.unlam.polimorfismo;
 
-public class Producto {
+public abstract class Producto {
 	
 	String nombre;
 	String marca;
@@ -15,6 +15,9 @@ public class Producto {
 	public Producto() {
 		
 	}
+	
+	public abstract Integer calcularPrecio();
+	
 	public String getNombre() {
 		return nombre;
 	}
